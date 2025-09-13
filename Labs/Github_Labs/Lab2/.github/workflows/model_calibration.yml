@@ -44,6 +44,7 @@ jobs:
         timestamp=$(cat timestamp.txt) # Use the timestamp in your training script
         python ./src/evaluate_model.py  --timestamp "$timestamp" # Assuming you have a script for model evaluation
         metrics_filename="${timestamp}_metrics.json"
+        mkdir -p $GITHUB_WORKSPACE/Labs/Github_Labs/Lab2/metrics/
         mv $metrics_filename $GITHUB_WORKSPACE/metrics/$metrics_filename
       continue-on-error: false  # Continue even if evaluation fails
 
